@@ -33,7 +33,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm --prefix aura-care ci
+        run: npm --prefix aura-care ci || npm --prefix aura-care install
 
       - name: Build Next.js static site
         env:
