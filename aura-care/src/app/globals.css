@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+:root {
+  --aura-midnight: #071514;
+  --aura-forest: #0B2523;
+  --aura-teal: #2DD4BF;
+  --aura-mint: #8AF5D0;
+  --aura-sage: #A8C8B8;
+  --aura-ivory: #FAF8F2;
+  --aura-frost: #F5FBF9;
+  --aura-mist: #DCECEF;
+  --aura-lavender: #C7B8FF;
+  --aura-muted: #9AAEAA;
+  --aura-dark: #182C2A;
+  
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: #071514;
+  color: #FAF8F2;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #071514;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 212, 191, 0.25);
+  border-radius: 9999px;
+  border: 1px solid rgba(138, 245, 208, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 212, 191, 0.5);
+}
+
+/* AURA INFINITY Glassmorphism Surfaces */
+.aura-glass {
+  background: rgba(11, 37, 35, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(45, 212, 191, 0.14);
+}
+
+.aura-glass-interactive {
+  background: rgba(11, 37, 35, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(45, 212, 191, 0.14);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aura-glass-interactive:hover {
+  background: rgba(11, 37, 35, 0.85);
+  border-color: rgba(138, 245, 208, 0.35);
+  box-shadow: 0 16px 40px -12px rgba(45, 212, 191, 0.16), 0 0 20px -2px rgba(45, 212, 191, 0.12);
+  transform: translateY(-2px);
+}
+
+.aura-glass-light {
+  background: #FAF8F2;
+  border: 1px solid rgba(168, 200, 184, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(7, 21, 20, 0.08);
+}
+
+.aura-glass-light-interactive {
+  background: #FAF8F2;
+  border: 1px solid rgba(168, 200, 184, 0.3);
+  transition: all 0.25s ease;
+}
+
+.aura-glass-light-interactive:hover {
+  border-color: #2DD4BF;
+  box-shadow: 0 12px 30px -8px rgba(45, 212, 191, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Glow Utilities */
+.aura-glow-teal {
+  box-shadow: 0 0 50px -10px rgba(45, 212, 191, 0.35);
+}
+
+.aura-glow-mint {
+  box-shadow: 0 0 50px -10px rgba(138, 245, 208, 0.3);
+}
+
+.aura-glow-subtle {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Gradient Text Utilities */
+.aura-text-gradient {
+  background: linear-gradient(135deg, #FAF8F2 15%, #8AF5D0 60%, #2DD4BF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aura-text-gradient-teal {
+  background: linear-gradient(135deg, #2DD4BF 0%, #8AF5D0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aura-text-gradient-amber {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Grid Background */
+.aura-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+}
+
+.aura-dots-pattern {
+  background-image: radial-gradient(rgba(45, 212, 191, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Keyframe Animations */
+@keyframes aura-orb-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 35px rgba(45, 212, 191, 0.45));
+  }
+  50% {
+    transform: scale(1.05) rotate(180deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 55px rgba(138, 245, 208, 0.65));
+  }
+}
+
+@keyframes aura-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aura-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes aura-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes aura-float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes aura-heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.18); }
+  70% { transform: scale(1); }
+}
+
+@keyframes aura-ecg-scan {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-aura-pulse {
+  animation: aura-orb-pulse 10s ease-in-out infinite;
+}
+
+.animate-aura-spin {
+  animation: aura-spin-slow 28s linear infinite;
+}
+
+.animate-aura-spin-reverse {
+  animation: aura-spin-reverse 34s linear infinite;
+}
+
+.animate-aura-float {
+  animation: aura-float 6s ease-in-out infinite;
+}
+
+.animate-aura-float-delayed {
+  animation: aura-float-delayed 7s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.animate-pulse-heart {
+  animation: aura-heartbeat 1.5s infinite ease-in-out;
+}
+
+.animate-ecg {
+  stroke-dasharray: 200, 30;
+  animation: aura-ecg-scan 7s linear infinite;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

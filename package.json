@@ -1,0 +1,11 @@
+{
+  "name": "health-management",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix aura-care run dev",
+    "build": "npm --prefix aura-care run build",
+    "start": "npm --prefix aura-care run start",
+    "lint": "npm --prefix aura-care run lint"
+  }
+}
